@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+   <head>
+       <link rel="stylesheet" href="anaindex_style.css">
+       <meta charset="utf-8">
+       <title>Sanal Galeri</title>
+       <link rel="shortcut icon" href="/tuvalicon.jpg.jpg" type="image/jpg">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+   </head>
+   <body>
+       <nav class="menu">
+           <span class="head">
+                <a class="head" href="/"> <h1>Sanal Galeri</h1></a>
+           </span>
+          <a class="menu" href="/Kubizm">Kübizm</a>
+          <a class="menu" href="/Minimalist">Minimalizm</a>
+          <a class="menu" href="/Dadaist">Dadaizm</a>
+          <a class="menu" href="/Pop-Art">Pop Art</a>
+          <a class="menu" href="/Surrealizm">Sürrealizm</a>
+          <a class="menu" href="/Ekspresyonist">Ekspresyonizm</a>
+          <a class="menu" href="/Futurizm">Fütürizm</a>
+          <span class="login"> 
+            <% if (displayLink == true) { %>
+              <div class="dropdown">
+                <button class="dropbtn"><%=kullanicilar.Name %> ↓</button>
+                <div class="dropdown-content">
+                  <a href="logout">Oturumu kapat</a>
+                </div>
+              </div>
+               <% } else {%>  
+                <a class="login" href="login">Oturum aç</a>   
+                <% }  %>                               
+          </span> 
+       </nav>        
+       <div class="main">
+        <div class="yazı">
+            Sanat akımları ve daha fazlası için.
+        </div>
+         <div class="search">
+              <input type="text" class="tbox-search" placeholder="Aramak için tıklayınız">
+              <button> 
+                <a class="btn-search">
+                    <i class="fa fa-search"></i>
+                </a>
+              </button>
+         </div>
+      </div>
+      <div class="container-like">
+         <div class="like">
+              <h2> En Çok Beğenilenler </h2>
+              <h3 class="iki"> İkinci </h3>
+              <h3 class="bir"> Birinci </h3>
+              <h3 class="uc"> Üçüncü </h3>
+              <% if (displayLink == true) { %>
+               <span class="iki"><img src="/fütürizm/fütürizm3.jpg" alt="fütürizm"></span>
+               <span class="bir"><img src="/minimalizm/minimalizm3.jpg" alt="minimalizm"></span>
+               <span class="uc"><img src="/popart/popart3.jpg" alt="popart"></span>
+               <% } else {%>  
+                <span class="iki"><h2>Lütfen giriş yapınız</h2></span>
+               <span class="bir"><h2>Lütfen giriş yapınız</h2></span>
+               <span class="uc"><h2>Lütfen giriş yapınız</h2></span>
+                <% }  %>  
+         </div>
+      </div>
+      <div class="container-wp">
+          <!-- <div class="mix"><img src="/kübizm/kübizm1.jpg" alt="kübizm" > <button onclick="change()"> <i id="renk" class="fa fa-heart" ></i></button> </div>
+           <div class="mix"><img src="/minimalizm/minimalizm1.jpg" alt="minimalizm"><button onclick="change()"> <i id="renk" class="fa fa-heart" ></i></button></div>
+      --> <% if (displayLink == true) { %>
+      <% for( let index = 1; index <= 4; index++ ) { %>
+        <div class="mix">
+            <a href="/kübizm/kübizm<%=index%>.jpg"> <img src="/kübizm/kübizm<%=index%>.jpg"></a>
+        </div>
+        <div class="mix">
+          <a href="/dadaizm/dadaizm<%=index%>.jpg"><img src="/dadaizm/dadaizm<%=index%>.jpg"></a>
+        </div>
+        <div class ="mix">
+          <a href="/ekspresyonizm/ekspresyonizm<%=index%>.jpg"><img src="/ekspresyonizm/ekspresyonizm<%=index%>.jpg"></a>
+        </div>
+        <div class="mix">
+         <a href="/fütürizm/fütürizm<%=index%>.jpg"> <img src="/fütürizm/fütürizm<%=index%>.jpg"> </a>
+        </div>
+        <div class="mix">
+         <a href="/minimalizm/minimalizm<%=index%>.jpg"><img src="/minimalizm/minimalizm<%=index%>.jpg"></a>
+        </div>
+        <div class="mix">
+         <a href="/popart/popart<%=index%>.jpg"> <img src="/popart/popart<%=index%>.jpg"> </a>
+        </div>
+        <div class="mix">
+          <a href="/sürrealizm/sürrealizm<%=index%>.jpg"> <img src="/sürrealizm/sürrealizm<%=index%>.jpg"> </a>
+        </div>
+   <% } %>
+   <% } else {%>  
+    <h1>RESİMLERİ GÖRMEK İÇİN LÜTFEN GİRİŞ YAPINIZ</h1>
+    <% }  %> 
+      </div>
+     <script>
+         document.getElementsByClassName("renk").style.color = "black";
+      function change(){ 
+        if(document.getElementById("renk").style.color == "black"){
+        document.getElementById("renk").style.color = "red";
+         }
+         else{
+           document.getElementById("renk").style.color = "black";
+         }
+     }   
+     </script>
+   </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+   <head>
+       <link rel="stylesheet" href="popart.css">
+       <meta charset="utf-8">
+       <title>Sanal Galeri</title>
+       <link rel="shortcut icon" href="/tuvalicon.jpg.jpg" type="image/jpg">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+   </head>
+   <body>
+    <nav class="menu">
+      <span class="head">
+           <a class="head" href="/"> <h1>Sanal Galeri</h1></a>
+      </span>
+      <a class="menu" href="/Kubizm">Kübizm</a>
+      <a class="menu" href="/Minimalist">Minimalizm</a>
+      <a class="menu" href="/Dadaist">Dadaizm</a>
+      <a class="menu" href="/Pop-Art">Pop Art</a>
+      <a class="menu" href="/Surrealizm">Sürrealizm</a>
+      <a class="menu" href="/Ekspresyonist">Ekspresyonizm</a>
+      <a class="menu" href="/Futurizm">Fütürizm</a>
+     <span class="login">                                      
+      <% if (displayLink == true) { %>
+        <div class="dropdown">
+          <button class="dropbtn"><%=kullanicilar.Name %> ↓</button>
+          <div class="dropdown-content">
+            <a href="logout">Oturumu kapat</a>
+          </div>
+        </div>
+       <% } else {%>  
+        <a class="login" href="login">Oturum aç</a>   
+        <% }  %>     
+     </span> 
+  </nav>        
+       <div class="main">
+        <div class="yazı">
+            Pop art, 1950'lerde, özellikle ABD ve İngiltere'de soyut dışavurumculuğa tepki gösteren genç sanatçıların 1960'larda bir akım haline getirdikleri sanat türüdür. İngiltere ve ABD'de değişik koşullarda ve birbirinden bağımsız olarak ortaya çıkmıştır.
+        </div>
+         <div class="search">
+              <input type="text" class="tbox-search" placeholder="Aramak için tıklayınız">
+              <button> 
+                <a class="btn-search">
+                    <i class="fa fa-search"></i>
+                </a>
+              </button>
+              
+         </div>
+      </div>
+      <div class="container-like">
+        <div class="like">
+          <h2> Bu Kategoride En Çok Beğenilenler </h2>
+          <h3 class="iki"> İkinci </h3>
+          <h3 class="bir"> Birinci </h3>
+          <h3 class="uc"> Üçüncü </h3>
+          <% if (displayLink == true) { %>
+            <span class="iki"><a href="/popart/popart1.jpg"><img src="/popart/popart1.jpg" alt="popart"></a></span>
+            <span class="bir"><a href="/popart/popart2.jpg"><img src="/popart/popart2.jpg" alt="popart"></a></span>
+            <span class="uc"><a href="/popart/popart3.jpg"><img src="/popart/popart3.jpg" alt="popart"></a></span>
+            <% } else {%>  
+             <span class="iki"><h2>Lütfen giriş yapınız</h2></span>
+            <span class="bir"><h2>Lütfen giriş yapınız</h2></span>
+            <span class="uc"><h2>Lütfen giriş yapınız</h2></span>
+             <% }  %>  
+        </div>
+     </div>
+     <div class="container-wp">
+      <% if (displayLink == true) { %>
+      <% for( let index = 1; index <= 4; index++ ) { %>
+        <div class="pa">
+           <a href="/popart/popart<%=index%>.jpg"> <img src="/popart/popart<%=index%>.jpg"> </a>
+        </div>
+   <% } %>
+   <% } else {%>  
+    <h1>RESİMLERİ GÖRMEK İÇİN LÜTFEN GİRİŞ YAPINIZ</h1>
+    <% }  %> 
+     </div>
+   </body>
+</html>
